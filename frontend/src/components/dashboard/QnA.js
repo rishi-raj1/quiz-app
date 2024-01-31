@@ -57,6 +57,7 @@ const QnA = () => {
                 const { quiz } = data;
 
                 setQuestionsArr(quiz.questionsArr);
+                setQuizType(quiz.quizType);
             }
             catch (err) {
                 if (err.response) {

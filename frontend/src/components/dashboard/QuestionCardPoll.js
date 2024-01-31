@@ -21,7 +21,7 @@ const QuestionCardPoll = ({ item, ind }) => {
             <div className={styled.info}>
                 {
                     item.pollOptionCount.map((element, index) => (
-                        <PollOption element={element} index={index} />
+                        <PollOption key={index} element={element} index={index} />
                     ))
                 }
             </div>

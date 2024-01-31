@@ -26,7 +26,8 @@ const TextOption = ({ ind }) => {
 
     const questionsNewArr = [...questionsArr];
 
-
+    console.log(create);
+    console.log(quizType);
 
     const radioHandler = () => {
         questionsNewArr[clickedNumber - 1] = {
