@@ -5,13 +5,14 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import LiveQuizPage from './pages/LiveQuizPage';
-
-
-import DataProvider from './context/DataProvider';
 import DeletePage from './pages/DeletePage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import AnalysisPage from './pages/AnalysisPage';
 import CreateQuizPage from './pages/CreateQuizPage';
+
+
+import DataProvider from './context/DataProvider';
+
 
 
 
