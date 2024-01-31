@@ -1,0 +1,28 @@
+.container {
+    padding: 80px 80px 40px 50px;
+    width: 80%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #EDEDED;
+}
+
+.firstDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.firstDiv .heading {
+    color: #5076FF;
+    font-size: 35px;
+}
+
+.firstDiv .details {
+    color: #FF5D01;
+}
+
+.secondDiv {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 20px;
+}

@@ -1,0 +1,41 @@
+.container {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heading {
+    font-size: 35px;
+}
+
+.score {
+    font-size: 35px;
+}
+
+.score span {
+    color: #60B84B;
+}
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 10px;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+}

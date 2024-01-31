@@ -1,0 +1,28 @@
+.container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px #00000026;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9F9F9F;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 15px;
+    color: #969696;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.container img {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    cursor: pointer;
+}
+
+
+.active {
+    border: 2px solid #60B84B;
+}

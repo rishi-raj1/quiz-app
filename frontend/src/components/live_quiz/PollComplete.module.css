@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 60px;
+    color: #474444;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 50px 20px;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 600;
+    }
+}

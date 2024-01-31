@@ -1,0 +1,40 @@
+.inputGroup {
+    font-family: 'Poppins', sans-serif;
+}
+
+.input {
+    margin-bottom: 20px;
+}
+
+.input label {
+    margin-right: 20px;
+}
+
+.emailLabel {
+    margin-left: 115px;
+}
+
+.passwordLabel {
+    margin-left: 80px;
+}
+
+.input input {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 10px 15px;
+    background-color: #F4F4F4;
+}
+
+.loginButton {
+    width: 250px;
+    padding: 5px 45px;
+    background-color: #A9BCFF;
+    margin-left: 120px;
+    margin-top: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}

@@ -1,0 +1,92 @@
+.container {
+    font-family: 'Poppins', sans-serif;
+    background-color: #041325;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered {
+    background-color: white;
+    border-radius: 5px;
+    width: 55%;
+    max-height: 90%;
+    padding: 40px 50px;
+}
+
+.firstDiv {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.timer {
+    color: #D60000;
+}
+
+.question {
+    font-size: 23px;
+    margin-bottom: 25px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next span {
+    background-color: #60B84B;
+    color: white;
+    padding: 7px 65px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit span {
+    background-color: #60B84B;
+    color: white;
+    padding: 7px 65px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 750px) {
+
+    .centered {
+        background-color: white;
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px 15px;
+    }
+
+    .next span {
+        padding: 7px 85px;
+    }
+
+    .submit span {
+        padding: 7px 85px;
+    }
+}
