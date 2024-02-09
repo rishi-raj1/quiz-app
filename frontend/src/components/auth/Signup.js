@@ -92,19 +92,19 @@ const Signup = () => {
         <div className={styled.inputGroup}>
             <div className={styled.input}>
                 <label className={styled.nameLabel} htmlFor='name'>Name</label>
-                <input id='name' placeholder='Enter your Name' name='name' value={obj.name} onChange={inputHandler} />
+                <input type='text' id='name' placeholder='Enter your Name' name='name' value={obj.name} onChange={inputHandler} />
             </div>
             <div className={styled.input}>
                 <label className={styled.emailLabel} htmlFor='email'>Email</label>
-                <input id='email' placeholder='Enter your Email' name='email' value={obj.email} onChange={inputHandler} />
+                <input type='email' id='email' placeholder='Enter your Email' name='email' value={obj.email} onChange={inputHandler} />
             </div>
             <div className={styled.input}>
                 <label className={styled.passwordLabel} htmlFor='password'>Password</label>
-                <input id='password' placeholder='Enter your Password' name='password' value={obj.password} onChange={inputHandler} />
+                <input type='password' id='password' placeholder='Enter your Password' name='password' value={obj.password} onChange={inputHandler} />
             </div>
             <div className={styled.input}>
                 <label className={styled.confirmPasswordLabel} htmlFor='confirm_password'>Confirm Password</label>
-                <input id='confirm_password' placeholder='Enter your Password' name='confirmPassword' value={obj.confirmPassword} onChange={inputHandler} />
+                <input type='password' id='confirm_password' placeholder='Enter your Password' name='confirmPassword' value={obj.confirmPassword} onChange={inputHandler} />
             </div>
             <div className={styled.signupButton} onClick={signupHandler}>
                 Sign Up
