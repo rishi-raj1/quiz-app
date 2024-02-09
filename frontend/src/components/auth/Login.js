@@ -19,6 +19,8 @@ const Login = () => {
         password: ''
     });
 
+    const [loading, setLoading] = useState(false);
+
 
     const inputHandler = (e) => {
         setObj({
@@ -38,6 +40,8 @@ const Login = () => {
                 alert('please fill the password field');
                 return;
             }
+
+            setLoading(true);
 
             const { data } = await axios.post(`${BACKEND_URL}/api/user/login`, {
                 email: obj.email,
@@ -60,6 +64,9 @@ const Login = () => {
                 alert(err.message);
             }
         }
+        finally {
+            setLoading(false);
+        }
     }
 
 
@@ -74,9 +81,11 @@ const Login = () => {
                 <label className={styled.passwordLabel} htmlFor='password'>Password</label>
                 <input type='password' id='password' placeholder='Enter your Password' name='password' value={obj.password} onChange={inputHandler} />
             </div>
-            <div className={styled.loginButton} onClick={loginHandler}>
-                Log In
-            </div>
+            <button className={styled.loginButton} onClick={loginHandler} disabled={loading}>
+                {
+                    loading ? 'Logging in...' : 'Log In'
+                }
+            </button>
         </div>
     )
 }

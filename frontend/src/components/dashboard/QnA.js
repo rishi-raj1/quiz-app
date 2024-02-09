@@ -37,6 +37,7 @@ const QnA = () => {
     const create = pathname.includes('/createQuiz');
 
     const [timer, setTimer] = useState('off');
+    const [loading, setLoading] = useState(false);
 
     const demoObj = {
         questionName: '',
@@ -205,6 +206,8 @@ const QnA = () => {
         }
 
         try {
+            setLoading(true);
+
             if (create) {
                 const { data } = await axios.post(`${BACKEND_URL}/api/quiz/create`, obj, config);
                 const { quizId } = data;
@@ -239,6 +242,9 @@ const QnA = () => {
             else {
                 alert(err.message);
             }
+        }
+        finally {
+            setLoading(false);
         }
     }
 
@@ -330,8 +336,8 @@ const QnA = () => {
                     )
                 }
                 <div className={styled.sixthDiv}>
-                    <span onClick={cancelHandler} >Cancel</span>
-                    <span onClick={createHandler}>{create ? 'Create' : 'Edit'} Quiz</span>
+                    <button onClick={cancelHandler} >Cancel</button>
+                    <button className={styled.createBtn} onClick={createHandler} disabled={loading}>{create ? 'Create' : 'Edit'} Quiz</button>
                 </div>
             </div>
         </div>

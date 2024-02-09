@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -12,6 +13,8 @@ const Delete = () => {
     const navigate = useNavigate();
     const { quizId } = useParams();
 
+    const [loading, setLoading] = useState(false);
+
     const config = {
         headers: {
             'Authorization': JSON.parse(localStorage.getItem('token'))
@@ -21,6 +24,7 @@ const Delete = () => {
 
     const confirmHandler = async () => {
         try {
+            setLoading(true);
             const result = await axios.delete(`${BACKEND_URL}/api/quiz/delete/${quizId}`, config);
         }
         catch (err) {
@@ -38,6 +42,9 @@ const Delete = () => {
                 alert(err.message);
             }
         }
+        finally {
+            setLoading(false);
+        }
 
         navigate('/analytics');
     }
@@ -54,8 +61,12 @@ const Delete = () => {
             <div className={styled.centeredDiv}>
                 <p>Are you confirm you want to delete ?</p>
                 <div className={styled.buttonsDiv}>
-                    <span onClick={confirmHandler}>Confirm Delete</span>
-                    <span onClick={cancelHandler}>Cancel</span>
+                    <button className={styled.deleteBtn} onClick={confirmHandler} disabled={loading}>
+                        {
+                            loading ? 'Deleting...' : 'Confirm Delete'
+                        }
+                    </button>
+                    <button onClick={cancelHandler}>Cancel</button>
                 </div>
             </div>
         </div>

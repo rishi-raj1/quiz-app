@@ -20,6 +20,8 @@ const Signup = () => {
         confirmPassword: ''
     });
 
+    const [loading, setLoading] = useState(false);
+
 
 
     const inputHandler = (e) => {
@@ -55,6 +57,8 @@ const Signup = () => {
                 return;
             }
 
+            setLoading(true);
+
             const { data } = await axios.post(`${BACKEND_URL}/api/user/register`, {
                 name: obj.name.trim(),
                 email: obj.email.trim(),
@@ -83,6 +87,9 @@ const Signup = () => {
                 alert(err.message);
             }
         }
+        finally {
+            setLoading(false);
+        }
     }
 
 
@@ -106,9 +113,11 @@ const Signup = () => {
                 <label className={styled.confirmPasswordLabel} htmlFor='confirm_password'>Confirm Password</label>
                 <input type='password' id='confirm_password' placeholder='Enter your Password' name='confirmPassword' value={obj.confirmPassword} onChange={inputHandler} />
             </div>
-            <div className={styled.signupButton} onClick={signupHandler}>
-                Sign Up
-            </div>
+            <button className={styled.signupButton} onClick={signupHandler} disabled={loading}>
+                {
+                    loading ? 'Signing up...' : 'Sign Up'
+                }
+            </button>
         </div>
     )
 }
